@@ -44,7 +44,7 @@ import kotlin.math.*
  *
  * @author Neil Davies
  */
-class SeekArc : View {
+open class SeekArc : View {
 
     /**
      * The Drawable for the seek arc thumbnail
@@ -107,17 +107,28 @@ class SeekArc : View {
     private var mEnabled = true
 
     // Internal variables
-    private var mArcRadius = 0
-    private var mProgressSweep = 0f
-    private val mArcRect = RectF()
-    private var mArcPaint: Paint? = null
-    private var mProgressPaint: Paint? = null
-    private var mTranslateX: Int = 0
-    private var mTranslateY: Int = 0
-    private var mThumbXPos: Int = 0
-    private var mThumbYPos: Int = 0
-    private var mTouchIgnoreRadius: Float = 0.toFloat()
-    private var mOnSeekArcChangeListener: OnSeekArcChangeListener? = null
+    protected var mArcRadius = 0
+        private set
+    protected var mProgressSweep = 0f
+        private set
+    protected val mArcRect = RectF()
+        private set
+    protected var mArcPaint: Paint? = null
+        private set
+    protected var mProgressPaint: Paint? = null
+        private set
+    protected var mTranslateX: Int = 0
+        private set
+    protected var mTranslateY: Int = 0
+        private set
+    protected var mThumbXPos: Int = 0
+        private set
+    protected var mThumbYPos: Int = 0
+        private set
+    protected var mTouchIgnoreRadius: Float = 0.toFloat()
+        private set
+    protected var mOnSeekArcChangeListener: OnSeekArcChangeListener? = null
+        private set
 
     var progress: Int
         get() = mProgress
